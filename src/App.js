@@ -1,6 +1,7 @@
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 import {useState} from 'react';
+import './AppTitle.css';
 
 const DUMMY_STATE = [
   {
@@ -24,7 +25,7 @@ const DUMMY_STATE = [
   },
 ];
 
-const App = () => {
+const App = (props) => {
 
   const [expenses, setExpense] = useState(DUMMY_STATE);
 
@@ -38,6 +39,7 @@ const App = () => {
 
   return (
     <div>
+      <h2 className="title">Expense Tracker</h2>
       <NewExpense onExpenseAdded = {addExpenseHandler}/>
       <Expenses items = {expenses}/>
     </div>
